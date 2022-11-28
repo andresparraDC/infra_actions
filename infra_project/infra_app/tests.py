@@ -9,15 +9,14 @@ class StaticPagesURLTests(TestCase):
 
     def test_about_url_exists_at_desired_location(self):
         """Проверка доступности страниц."""
-        urls_status = { 
-            '/': HTTPStatus.OK.value, 
-            '/second/': HTTPStatus.OK.value, 
+        urls_status = {
+            '/': HTTPStatus.OK.value,
+            '/second/': HTTPStatus.OK.value,
         }
-        for urls, status in urls_status.items(): 
-            with self.subTest(urls=urls): 
-                response = self.client.get(urls) 
+        for urls, status in urls_status.items():
+            with self.subTest(urls=urls):
+                response = self.client.get(urls)
                 self.assertEqual(response.status_code, status)
-
 
     def test_page_shows_correct_content(self):
         """Проверка контента страниц."""
