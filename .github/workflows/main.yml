@@ -33,9 +33,9 @@ jobs:
             key: ${{ secrets.SSH_KEY }}
             passphrase: ${{ secrets.PASSPHRASE }}
             script: |
-              sudo docker pull freddyandresparraorellana/infraactions
+              sudo docker pull freddyparra/infraactions
               sudo docker stop $(sudo docker ps -a -q)
-              sudo docker run --rm -d -p 5000:5000 freddyandresparraorellana@infraactions
+              sudo docker run --rm -d -p 5000:5000 freddyparra@infraactions
   build_and_push_to_docker_hub:
       name: Push Docker image to Docker Hub
       runs-on: ubuntu-latest
